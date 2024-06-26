@@ -7,8 +7,8 @@ namespace songAPI.Data
     {
         // Fields
         public DbSet<Title> Titles => Set<Title>();
-        public DbSet<Artist> artists => Set<Artist>();
-        public DbSet<Album> albums => Set<Album>();
+        public DbSet<Artist> Artists => Set<Artist>();
+        public DbSet<Album> Albums => Set<Album>();
 
         // Constructor
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
