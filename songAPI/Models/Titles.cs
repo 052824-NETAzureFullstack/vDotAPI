@@ -8,6 +8,8 @@ namespace songAPI.Models
         public string titleName { get; set; } = "";
         public string genre { get; } = "";
         public DateOnly releaseDate { get; set; }
+        public int artistId { get; set; }
+        public int albumId { get; set; }
 
     }
 

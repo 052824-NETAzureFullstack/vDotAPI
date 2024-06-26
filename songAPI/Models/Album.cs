@@ -6,6 +6,7 @@ namespace songAPI.Models
     {
         public int albumId { get; set; }
         public string Name { get; set; } = "";
+        public List<Title> trackList { get; set; } = new List<Title>();
 
     }
 
