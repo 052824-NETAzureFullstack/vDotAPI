@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TitleComponent } from './Components/title/title.component';
 
 @Component({
   selector: 'app-root',
