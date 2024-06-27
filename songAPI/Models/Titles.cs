@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace songAPI.Models
@@ -16,6 +17,6 @@ namespace songAPI.Models
         public string titleName { get; set; } = "";
         public string genre { get; } = "";
         public DateOnly releaseDate { get; set; }
-    }
+      }
 
 }
