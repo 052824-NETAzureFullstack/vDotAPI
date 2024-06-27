@@ -17,6 +17,7 @@ namespace songAPI.Controllers
         {
             this._context = context;
         }
+        // Methods
 
         // GET: api/<songController>
         [HttpGet]
@@ -44,7 +45,7 @@ namespace songAPI.Controllers
 
             foreach(Title t in songs)
             {
-                if (t.titleName == newSong.titleName)
+                if (t.SongName == newSong.SongName)
                     return Conflict(newSong);
             }
 
@@ -55,6 +56,7 @@ namespace songAPI.Controllers
         }
 
         // PUT api/<songController>/5
+        
         [HttpPut("{id}")]
         public async Task<ActionResult<Title>> Put(int id, [FromBody] Title update)
         {
@@ -68,6 +70,7 @@ namespace songAPI.Controllers
         }
 
         // DELETE api/<songController>/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult<Title>> Delete(int id)
         {

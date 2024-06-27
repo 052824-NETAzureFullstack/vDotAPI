@@ -11,7 +11,7 @@ using songAPI.Data;
 namespace songAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240625215929_initial")]
+    [Migration("20240627192608_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
