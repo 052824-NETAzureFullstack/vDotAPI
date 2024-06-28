@@ -21,9 +21,13 @@ namespace songAPI.Controllers
 
         // GET: api/<songController>
         [HttpGet]
-        public async Task<ActionResult<Title>> Get()
+        public async Task<ActionResult<List<Title>>> Get()
         {
-            return Ok(await _context.Titles.ToListAsync());
+            // List<Title> songs = await _context.Titles.Include(s => s.Album).Include(s => s.Artist).ToListAsync();
+            return Ok(await _context.Titles
+                                .Include(a => a.Album)
+                                .Include(ar => ar.Artist)
+                                .ToListAsync());
         }
 
         // GET api/<songController>/5
@@ -34,7 +38,10 @@ namespace songAPI.Controllers
             if (findSong == null)
                 return NotFound();
             
-            return Ok(findSong);
+            return Ok(await _context.Titles
+                                .Include(a => a.Album)
+                                .Include(ar => ar.Artist)
+                                .FirstAsync(s => s.Id == id));
         }
 
         // POST api/<songController>
@@ -60,11 +67,14 @@ namespace songAPI.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<Title>> Put(int id, [FromBody] Title update)
         {
-            Title? song = await _context.Titles.FindAsync();
+            Title? song = await _context.Titles.FindAsync(id);
             if (song == null)
                 return NotFound();
             
-            song = update;
+            song.SongName = update.SongName;
+            song.Genre = update.Genre;
+            song.Tempo = update.Tempo;
+
             await _context.SaveChangesAsync();
             return NoContent();
         }
