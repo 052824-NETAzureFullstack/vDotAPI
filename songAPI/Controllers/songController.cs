@@ -38,7 +38,7 @@ namespace songAPI.Controllers
         }
 
         // POST api/<songController>
-        [HttpPost]
+        [HttpPost("{SongName}")]
         public async Task<ActionResult<Title>> Post([FromBody] Title newSong)
         {
             List<Title> songs = await _context.Titles.ToListAsync();
