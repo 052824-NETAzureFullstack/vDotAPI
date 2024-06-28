@@ -10,8 +10,8 @@ namespace songAPI.Models
         public int Id { get; set; }
 
         // Foreign Key(s)
-        public int ArtistId { get; set; }
-        public int AlbumId { get; set; }
+        public Artist Artist { get; set; }
+        public Album Album { get; set; }
 
         
         public string SongName { get; set; } = "";
