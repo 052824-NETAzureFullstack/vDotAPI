@@ -1,7 +1,11 @@
+import { Album } from "./album";
+import { Artist } from "./artist";
+
 export interface Songs {
-    songId: number,
-    artistId: number,
-    albumId: number,
-    titleName: string,
-    genre: string
+    id: number;
+    songName: string;
+    genre: string;
+    tempo: number;
+    artist: Artist;
+    album: Album
 }

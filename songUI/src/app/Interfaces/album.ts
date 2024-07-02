@@ -1,6 +1,9 @@
+import { Artist } from "./artist"
+import { Songs } from "./songs"
+
 export interface Album {
-    albumId: number,
-    Name: string,
-    artist: number,
-    Tracklist: string[]
+    albumId: number;
+    albumName: string;
+    artist: Artist;
+    tracklist: Songs
 }

@@ -15,8 +15,6 @@ export class TitleService {
   constructor() { }
 
   GetSongById(songId: number): Observable<Songs> {
-    return this.http.get<Songs>(
-      `$(this.URL)/$(this.songId)`
-    )
+    return this.http.get<Songs>(`${this.URL}/${songId}`);
   }
 }

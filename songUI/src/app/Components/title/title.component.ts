@@ -1,4 +1,4 @@
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule, NgIf, AsyncPipe } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Inject } from '@angular/core';
@@ -9,16 +9,17 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-title',
   standalone: true,
-  imports: [ CommonModule, NgIf ],
+  imports: [ CommonModule, NgIf, AsyncPipe ],
   templateUrl: './title.component.html',
   styleUrl: './title.component.css'
 })
+
 export class TitleComponent {
   currentTitle$!: Observable<Songs>;
 
-  constructor(private titleService: TitleService) { }
+  constructor(private titleService: TitleService) {}
 
   ngOnInit(): void{
-    this.currentTitle$ = this.titleService.GetSongById(0);
+    this.currentTitle$ = this.titleService.GetSongById(4);
   }
 }
