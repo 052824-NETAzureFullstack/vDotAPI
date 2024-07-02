@@ -2,8 +2,18 @@ import { Artist } from "./artist"
 import { Songs } from "./songs"
 
 export interface Album {
-    albumId: number;
+    id: number;
     albumName: string;
-    artist: Artist;
-    tracklist: Songs
+    composers: [];
+    tracklist: []
 }
+
+/*"album": {
+      "id": 3,
+      "albumName": "Gorillaz",
+      "trackList": [
+        null
+      ],
+      "composers": []
+    }
+  } */

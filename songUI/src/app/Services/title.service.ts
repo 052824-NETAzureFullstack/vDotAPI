@@ -14,7 +14,14 @@ export class TitleService {
 
   constructor() { }
 
+  // HTTP requests below
   GetSongById(songId: number): Observable<Songs> {
     return this.http.get<Songs>(`${this.URL}/${songId}`);
+  }
+
+  GetSongs(): Observable<Songs[]> {
+    // var response = this.http.get<Songs[]>(this.URL);
+    // response.subscribe( result => {console.log(result)});
+    return this.http.get<Songs[]>(this.URL);
   }
 }

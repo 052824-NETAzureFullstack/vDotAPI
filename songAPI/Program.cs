@@ -20,6 +20,7 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        // Add Database Context for EF Core on Azure
         builder.Services.AddDbContext<DataContext>(options => 
         {
             options.UseSqlServer(builder.Configuration.GetConnectionString("run"));

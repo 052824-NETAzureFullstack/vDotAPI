@@ -9,3 +9,27 @@ export interface Songs {
     artist: Artist;
     album: Album
 }
+
+/*{
+    "id": 7,
+    "songName": "The Real Folk Blues",
+    "genre": "Jazz",
+    "tempo": 90,
+    "artist": {
+      "id": 5,
+      "name": "The Seatbelts",
+      "songs": [
+        null
+      ],
+      "discography": []
+    },
+    "album": {
+      "id": 5,
+      "albumName": "Cowboy Bebop Vitaminless",
+      "trackList": [
+        null
+      ],
+      "composers": []
+    }
+  }
+*/
