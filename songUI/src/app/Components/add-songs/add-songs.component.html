@@ -1,0 +1,30 @@
+<div>
+    <p>
+        <label for="songName">Song Name: </label>
+    </p>
+    <input type="text" id="songName" [(ngModel)]="song.songName" placeholder="Name the song"/>
+
+    <p>
+        <label for="genre">Genre: </label>
+    </p>
+    <input type="text" id="genre" [(ngModel)]="song.genre" placeholder="Name the genre"/>
+
+    <p>
+        <label for="tempo">Tempo: </label>
+    </p>
+    <input type="number" id="tempo" [(ngModel)]="song.tempo" placeholder="Song speed"/>
+
+    <p>
+        <label for="artist">Artist: </label>
+    </p>
+    <input type="text" id="artist" [(ngModel)]="song.artist.name" placeholder="Song artist"/>
+
+    <p>
+        <label for="album">Album: </label>
+    </p>
+    <input type="text" id="album" [(ngModel)]="song.album.albumName" placeholder="Album name"/>
+
+    <br><br>
+
+    <button (click)="addSong()">Add New Song</button>
+</div>

@@ -21,3 +21,5 @@ Dotnet Controllers, Fullstack Angular APA, Entity Framework Core
     - Album - Album
     - Release date - Date
 
+- UI - Music
+    -Title

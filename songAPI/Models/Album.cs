@@ -4,11 +4,10 @@ namespace songAPI.Models
 {
     public class Album
     {
-        public int AlbumId { get; set; }
-        public string Name { get; set; } = "";
-        public int artistId { get; set; }
-
-        public List<Title> trackList { get; set; } = new List<Title>();
+        public int Id { get; set; }
+        public string AlbumName { get; set; } = "";
+        public List<Title> TrackList {get; set; } = new List<Title>();
+        public List<Artist> Composers {get; set; } = new List<Artist>();
 
     }
 

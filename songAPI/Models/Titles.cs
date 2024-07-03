@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace songAPI.Models
@@ -6,16 +7,15 @@ namespace songAPI.Models
     public class Title
     {
         // Primary Key
-        [Key]
-        public int songId { get; set; }
-        
-        // Foreign keys
-        public int artistId { get; set; }
-        public int albumId { get; set; }
+        public int Id { get; set; }
 
-        public string titleName { get; set; } = "";
-        public string genre { get; } = "";
-        public DateOnly releaseDate { get; set; }
-    }
+        public string SongName { get; set; } = "";
+        public string Genre { get; set; } = "";
+        public int Tempo { get; set; }
+
+        // Foreign Key(s)
+        public Artist Artist { get; set; }
+        public Album Album { get; set; }
+      }
 
 }

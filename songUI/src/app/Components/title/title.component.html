@@ -1,0 +1,10 @@
+<h1>Title Component</h1>
+
+<ng-container *ngIf="currentTitle$ | async as currentTitle">
+    <p>Song Id: {{ currentTitle.id}}</p>
+    <p>Title: {{ currentTitle.songName}}</p>
+    <p>Genre: {{ currentTitle.genre}}</p>
+    <p>Tempo: {{ currentTitle.tempo}}</p>
+    <p>Artist: {{ currentTitle.artist}}</p>
+    <p>Album: {{ currentTitle.album}}</p>
+</ng-container>
