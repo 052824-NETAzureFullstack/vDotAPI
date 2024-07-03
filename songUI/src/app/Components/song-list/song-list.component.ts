@@ -23,4 +23,19 @@ export class SongListComponent {
     this.songs$.subscribe( x => this.songList = x);
     // console.log(this.songList);
   }
+
+  deleteSong(song: Songs) {
+    // this.songService.Delete(id).subscribe( result => {
+    //   console.log(result);
+    // });
+    // this.songService.GetSongs().subscribe( x => this.songList = x);
+
+    let result = this.songService.Delete(song.id).subscribe( result => {
+      console.log(result);
+    });
+
+    if (result) {
+      this.songList.splice(this.songList.indexOf(song),1);
+    }
+  }
 }

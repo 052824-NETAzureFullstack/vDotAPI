@@ -29,4 +29,8 @@ export class TitleService {
   AddNewSong(newSong: NewSong) {
     return this.http.post<any>(this.URL, newSong);
   }
+
+  Delete(deleteSong: number) {
+    return this.http.delete<any>(this.URL + '/' + deleteSong);
+  }
 }
