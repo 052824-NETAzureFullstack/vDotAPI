@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using songAPI.Data;
 using System.Text.Json.Serialization;
@@ -8,9 +9,22 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        // CORS policy for UI access
+        var CORSPolicy = "CORSPolicy";
+        
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddCors( options => 
+        {
+            options.AddPolicy( name: CORSPolicy,
+                                policy =>
+                                {
+                                    policy.WithOrigins("http://localhost:4200")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                                });
+        });
 
         builder.Services.AddControllers().AddJsonOptions( options => 
         {
@@ -27,6 +41,9 @@ public class Program
         });
 
         var app = builder.Build();
+
+        // Use our new CORS Policy
+        app.UseCors(CORSPolicy);
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

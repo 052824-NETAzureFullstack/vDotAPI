@@ -1,7 +1,9 @@
 @for(song of songList; track song.id){
-    <p>Id: {{ song.id }}</p>
+    <!-- <p>Id: {{ song.id }}</p>
     <p>Title: {{ song.songName }}</p>
     <p>Genre: {{ song.genre }}</p>
-    <p>Tempo: {{ song.tempo }}</p>
-    <p>Artist: {{ song.artist }}</p>
+    <p>Tempo: {{ song.tempo }}</p> -->
+    <ul>
+        <li><a [routerLink]="['/song', song.id]"><button>Title: {{ song.songName }}</button></a></li>
+    </ul>
 }

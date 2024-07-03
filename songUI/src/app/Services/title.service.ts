@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Songs } from '../Interfaces/songs';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NewSong } from '../Interfaces/new-song';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class TitleService {
     // var response = this.http.get<Songs[]>(this.URL);
     // response.subscribe( result => {console.log(result)});
     return this.http.get<Songs[]>(this.URL);
+  }
+
+  AddNewSong(newSong: NewSong) {
+    return this.http.post<any>(this.URL, newSong);
   }
 }
